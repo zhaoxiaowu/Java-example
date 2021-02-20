@@ -22,8 +22,10 @@ public class ListPdf {
             if (subFile.isFile() && subFile.getName().endsWith(".pdf")) {
                 String result = subFile.toString().replace(FILE_NAME, "");
                 String link = LINK_PREFIX + result;
-                //生成markdown 语法 []()
-                System.out.println(" - [" + subFile.getName().replace(".pdf", "") + "](" + link + ")");
+                //生成markdown 语法 []() 无法跳转到新页面
+                //System.out.println(" - [" + subFile.getName().replace(".pdf", "") + "](" + link + ")");
+                //<a href="http://write.blog.csdn.net/postlist" target="_blank">跳到自己博客列表</a>
+                System.out.println("- <a href=\"" + link + "\" target=\"_blank\">" + subFile.getName().replace(".pdf", "") + "</a>");
                 System.out.println("");
             } else if (subFile.isDirectory()) {
                 listPdf(subFile.toString());

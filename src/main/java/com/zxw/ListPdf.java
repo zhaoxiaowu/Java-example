@@ -23,7 +23,8 @@ public class ListPdf {
                 String result = subFile.toString().replace(FILE_NAME, "");
                 String link = LINK_PREFIX + result;
                 //生成markdown 语法 []()
-                System.out.println("[" + subFile.getName().replace(".pdf", "") + "](" + link + ")");
+                System.out.println(" - [" + subFile.getName().replace(".pdf", "") + "](" + link + ")");
+                System.out.println("");
             } else if (subFile.isDirectory()) {
                 listPdf(subFile.toString());
             }
